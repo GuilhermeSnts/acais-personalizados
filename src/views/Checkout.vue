@@ -7,7 +7,7 @@
       :price="price"
       :size="size.name"
       :flavor="flavor.name"
-      :customization="[customization.name]"
+      :customization="customization"
     />
 
     <BaseButton label="Finalizar" @click="finish">

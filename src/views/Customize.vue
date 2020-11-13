@@ -2,11 +2,8 @@
   <div class="customize--page">
     <h1>Personalizar</h1>
     <p>Complemento</p>
-    <BaseSelect
-      v-model="customization"
-      :items="GET_CUSTOMIZATIONS"
-      placeholder="Escolha uma opção"
-    />
+    <CheckboxGroup v-model="customization" :items="GET_CUSTOMIZATIONS" />
+
     <BaseButton label="Continuar" @click="proceed">
       <ArrowRightIcon />
     </BaseButton>
@@ -15,7 +12,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import BaseSelect from "../components/BaseSelect";
+import CheckboxGroup from "../components/CheckboxGroup";
 import BaseButton from "../components/BaseButton";
 import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 
@@ -30,7 +27,6 @@ export default {
         return this.GET_CUSTOMIZATION;
       },
       set(value) {
-        console.log(value);
         this.SET_CUSTOMIZATION(value);
       }
     }
@@ -47,7 +43,7 @@ export default {
   },
 
   components: {
-    BaseSelect,
+    CheckboxGroup,
     BaseButton,
     ArrowRightIcon
   }

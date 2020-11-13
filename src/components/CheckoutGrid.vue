@@ -12,10 +12,12 @@
         {{ flavor }}
       </div>
     </div>
-    <div class="row">
+    <div class="row" v-show="customization.length">
       <div class="field col">Adicionais:</div>
       <div class="value col">
-        <span v-for="item in customization" :key="item">{{ item }}, </span>
+        <span v-for="(item, index) in customization" :key="index"
+          >{{ item.name }},
+        </span>
       </div>
     </div>
     <br />

@@ -11,13 +11,23 @@ export default {
   GET_PRICE(state) {
     let sizePrice = state.size.price;
     let flavorPrice = state.flavor.price;
-    let customizationPrice = state.customization.price || 0;
-    return sizePrice + flavorPrice + customizationPrice;
+    let customizationPrices = state.customization.map(i => i.price);
+    let customizationTotalValue = 0;
+
+    if (customizationPrices.length)
+      customizationTotalValue =
+        customizationPrices.reduce((acc, i) => acc + i) || 0;
+    return sizePrice + flavorPrice + customizationTotalValue;
   },
   GET_PREP(state) {
     let sizePrep = state.size.prep;
     let flavorPrep = state.flavor.prep;
-    let customizationPrep = state.customization.prep || 0;
-    return sizePrep + flavorPrep + customizationPrep;
+    let customizationPreps = state.customization.map(i => i.prep);
+    let customizationTotalValue = 0;
+
+    if (customizationPreps.length)
+      customizationTotalValue =
+        customizationPreps.reduce((acc, i) => acc + i) || 0;
+    return sizePrep + flavorPrep + customizationTotalValue;
   }
 };

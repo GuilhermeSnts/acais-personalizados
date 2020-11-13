@@ -1,7 +1,7 @@
 export default {
   size: {},
   flavor: {},
-  customization: {},
+  customization: [],
   price: 0,
   prep: 0
 };
