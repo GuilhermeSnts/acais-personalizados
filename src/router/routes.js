@@ -1,3 +1,5 @@
+import routeCheck from "./routeCheck";
+
 export default [
   {
     path: "/",
@@ -10,18 +12,21 @@ export default [
     component: () =>
       import(
         /* webpackChunkName: "size-and-flavor" */ "../views/SizeAndFlavor.vue"
-      )
+      ),
+    ...routeCheck.hasProducts
   },
   {
     path: "/customize",
     name: "Customize",
     component: () =>
-      import(/* webpackChunkName: "customize" */ "../views/Customize.vue")
+      import(/* webpackChunkName: "customize" */ "../views/Customize.vue"),
+    ...routeCheck.hasSizeAndFlavor
   },
   {
     path: "/checkout",
     name: "Checkout",
     component: () =>
-      import(/* webpackChunkName: "checkout" */ "../views/Checkout.vue")
+      import(/* webpackChunkName: "checkout" */ "../views/Checkout.vue"),
+    ...routeCheck.hasSizeAndFlavor
   }
 ];
