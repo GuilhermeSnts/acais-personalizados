@@ -5,7 +5,7 @@
     <p><b>Sabor: </b> {{ flavor.name }}</p>
     <p><b>Personalização</b> {{ customization.name }}</p>
     <br />
-    <p><b>Valor</b> R$ {{ price }}</p>
+    <p><b>Valor</b> {{ price | real }}</p>
     <p><b>Tempo de Preparo</b> {{ prep }} minutos</p>
     <br />
     <br />
@@ -64,6 +64,15 @@ export default {
     BaseButton,
     BaseDialog,
     ArrowRightIcon
+  },
+
+  filters: {
+    real(val) {
+      return val.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+      });
+    }
   }
 };
 </script>
