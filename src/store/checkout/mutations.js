@@ -4,5 +4,8 @@ export default {
   },
   SET_FLAVOR(state, payload) {
     state.flavor = payload;
+  },
+  SET_CUSTOMIZATION(state, payload) {
+    state.customization = payload;
   }
 };

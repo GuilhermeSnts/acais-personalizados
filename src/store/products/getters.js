@@ -4,5 +4,8 @@ export default {
   },
   GET_FLAVORS(state) {
     return state.flavors;
+  },
+  GET_CUSTOMIZATIONS(state) {
+    return state.customizations;
   }
 };

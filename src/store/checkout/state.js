@@ -1,4 +1,5 @@
 export default {
   size: "",
-  flavor: ""
+  flavor: "",
+  customization: ""
 };
