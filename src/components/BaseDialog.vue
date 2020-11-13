@@ -25,7 +25,7 @@ export default {
 .dialog-screen
   width: 100vw
   height: 100vh
-  background: #52219dCC
+  background: $primaryWithAlpha
   position: fixed
   z-index: 1
   top: 0

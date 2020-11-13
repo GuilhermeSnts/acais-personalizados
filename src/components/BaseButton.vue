@@ -63,7 +63,7 @@ export default {
     // Modes
     &.primary
       color: #fff
-      background-color: #52219d
+      background-color: $primary
       border-radius: 25px
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
       transition: all 0.3s ease 0s
@@ -71,8 +71,8 @@ export default {
       .icon
         fill: #fff !important
       &:hover
-        background-color: #52219d
-        box-shadow: 0px 15px 20px #52219d4D
+        background-color: $primary
+        box-shadow: 0px 15px 20px $primaryWithAlpha
         background-image: none
         color: #fff
         transform: translateY(-7px)

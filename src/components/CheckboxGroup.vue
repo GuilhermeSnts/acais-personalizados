@@ -64,18 +64,18 @@ export default {
     transition: all 0.3s ease 0s
     cursor: pointer
     &:hover
-      background-color: #52219d
-      border: 1px solid #52219d
-      box-shadow: 0px 15px 20px #52219d4D
+      background-color: $primary
+      border: 1px solid $primary
+      box-shadow: 0px 15px 20px $primaryWithAlpha
       background-image: none
       color: #fff
       transform: translateY(-7px)
     &.active
-      border: 1px solid #52219d
-      color: #52219d
+      border: 1px solid $primary
+      color: $primary
       &:hover
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
         background: none
         transform: translateY(0px)
-        color: #52219d
+        color: $primary
 </style>

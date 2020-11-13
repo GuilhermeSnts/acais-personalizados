@@ -43,12 +43,12 @@ export default {
   border-radius: 25px
   padding: 8px 15px
   font-family: 'Roboto', sans-serif
-  border: 1px solid #52219d
+  border: 1px solid $primary
   appearance: none
   outline: 0
   cursor: pointer
   flex: 1
-  color: #52219d
+  color: $primary
   cursor: pointer
   min-width: 180px
   &.error
@@ -56,12 +56,12 @@ export default {
     border: 1px solid red
   &:hover
     color: #fff
-    background-color: #52219d
+    background-color: $primary
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
     transition: all 0.3s ease 0s
-    border: 1px solid #52219d
+    border: 1px solid $primary
   option
-    background-color: #52219d
+    background-color: $primary
     padding: 5px 10px
 .base-select-error-message
   margin-top: 3px
