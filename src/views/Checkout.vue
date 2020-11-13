@@ -1,15 +1,15 @@
 <template>
   <div class="checkout--page">
     <h1>Checkout</h1>
-    <p><b>Tamanho: </b> {{ size.name }}</p>
-    <p><b>Sabor: </b> {{ flavor.name }}</p>
-    <p><b>Personalização</b> {{ customization.name }}</p>
-    <br />
-    <p><b>Valor</b> {{ price | real }}</p>
-    <p><b>Tempo de Preparo</b> {{ prep }} minutos</p>
-    <br />
-    <br />
-    <br />
+
+    <CheckoutGrid
+      :prep="prep"
+      :price="price"
+      :size="size.name"
+      :flavor="flavor.name"
+      :customization="[customization.name]"
+    />
+
     <BaseButton label="Finalizar" @click="finish">
       <ArrowRightIcon />
     </BaseButton>
@@ -27,6 +27,7 @@
 import { mapGetters, mapActions } from "vuex";
 import BaseButton from "../components/BaseButton";
 import BaseDialog from "../components/BaseDialog";
+import CheckoutGrid from "../components/CheckoutGrid";
 import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 
 export default {
@@ -63,16 +64,8 @@ export default {
   components: {
     BaseButton,
     BaseDialog,
+    CheckoutGrid,
     ArrowRightIcon
-  },
-
-  filters: {
-    real(val) {
-      return val.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL"
-      });
-    }
   }
 };
 </script>
