@@ -11,13 +11,13 @@ export default {
   GET_PRICE(state) {
     let sizePrice = state.size.price;
     let flavorPrice = state.flavor.price;
-    let customizationPrice = state.customization.price;
+    let customizationPrice = state.customization.price || 0;
     return sizePrice + flavorPrice + customizationPrice;
   },
   GET_PREP(state) {
     let sizePrep = state.size.prep;
     let flavorPrep = state.flavor.prep;
-    let customizationPrep = state.customization.prep;
+    let customizationPrep = state.customization.prep || 0;
     return sizePrep + flavorPrep + customizationPrep;
   }
 };
