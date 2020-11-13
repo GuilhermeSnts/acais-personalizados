@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import BaseButton from "../components/BaseButton";
 import BerryIcon from "../components/icons/BerryIcon";
 export default {
@@ -16,6 +17,14 @@ export default {
   components: {
     BaseButton,
     BerryIcon
+  },
+
+  methods: {
+    ...mapActions("products", ["DO_GET_PRODUCTS"])
+  },
+
+  created() {
+    this.DO_GET_PRODUCTS();
   }
 };
 </script>
