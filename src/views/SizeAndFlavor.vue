@@ -6,12 +6,16 @@
       v-model="size"
       :items="GET_SIZES"
       placeholder="Escolha uma opção"
+      :error="sizeEmptyError"
+      errorMessage="Escolha um tamanho para continuar."
     />
     <p>Sabor</p>
     <BaseSelect
       v-model="flavor"
       :items="GET_FLAVORS"
       placeholder="Escolha uma opção"
+      :error="flavorEmptyError"
+      errorMessage="Escolha um sabor para continuar."
     />
     <br />
     <br />
@@ -32,6 +36,11 @@ import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 export default {
   name: "SizeAndFlavor",
 
+  data: () => ({
+    sizeEmptyError: false,
+    flavorEmptyError: false
+  }),
+
   computed: {
     ...mapGetters("checkout", ["GET_SIZE", "GET_FLAVOR"]),
     ...mapGetters("products", ["GET_SIZES", "GET_FLAVORS"]),
@@ -40,7 +49,7 @@ export default {
         return this.GET_SIZE;
       },
       set(value) {
-        console.log(value);
+        this.sizeEmptyError = false;
         this.SET_SIZE(value);
       }
     },
@@ -49,7 +58,7 @@ export default {
         return this.GET_FLAVOR;
       },
       set(value) {
-        console.log(value);
+        this.flavorEmptyError = false;
         this.SET_FLAVOR(value);
       }
     }
@@ -59,7 +68,11 @@ export default {
     ...mapMutations("checkout", ["SET_SIZE", "SET_FLAVOR"]),
 
     checkOptionsAndProceed() {
-      if (this.size && this.flavor) {
+      if (!this.size.name) {
+        this.sizeEmptyError = true;
+      } else if (!this.flavor.name) {
+        this.flavorEmptyError = true;
+      } else {
         this.$router.push("/customize");
       }
     },
