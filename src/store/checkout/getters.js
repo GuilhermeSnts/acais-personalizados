@@ -9,9 +9,15 @@ export default {
     return state.customization;
   },
   GET_PRICE(state) {
-    return state.price;
+    let sizePrice = state.size.price;
+    let flavorPrice = state.flavor.price;
+    let customizationPrice = state.customization.price;
+    return sizePrice + flavorPrice + customizationPrice;
   },
   GET_PREP(state) {
-    return state.prep;
+    let sizePrep = state.size.prep;
+    let flavorPrep = state.flavor.prep;
+    let customizationPrep = state.customization.prep;
+    return sizePrep + flavorPrep + customizationPrep;
   }
 };

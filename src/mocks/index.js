@@ -7,7 +7,8 @@ export function makeServer({ environment = "development" } = {}) {
     models: {
       size: Model,
       flavor: Model,
-      customization: Model
+      customization: Model,
+      order: Model
     },
 
     seeds(server) {

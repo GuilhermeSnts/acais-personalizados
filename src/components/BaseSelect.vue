@@ -1,8 +1,8 @@
 <template>
   <select class="base-select" v-model="size">
-    <option value="" disabled selected>{{ placeholder }}</option>
+    <option :value="{}" disabled selected>{{ placeholder }}</option>
     <option :value="item" v-for="(item, index) in items" :key="index">{{
-      item
+      item.name
     }}</option>
   </select>
 </template>
@@ -25,7 +25,7 @@ export default {
 
   props: {
     items: Array,
-    value: String,
+    value: Object,
     placeholder: String
   }
 };

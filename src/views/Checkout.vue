@@ -1,9 +1,9 @@
 <template>
   <div class="checkout--page">
     <h1>Checkout</h1>
-    <p><b>Tamanho: </b> {{ size }}</p>
-    <p><b>Sabor: </b> {{ flavor }}</p>
-    <p><b>Personalização</b> {{ customization }}</p>
+    <p><b>Tamanho: </b> {{ size.name }}</p>
+    <p><b>Sabor: </b> {{ flavor.name }}</p>
+    <p><b>Personalização</b> {{ customization.name }}</p>
     <br />
     <p><b>Valor</b> R$ {{ price }}</p>
     <p><b>Tempo de Preparo</b> {{ prep }} minutos</p>
