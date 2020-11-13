@@ -7,5 +7,11 @@ export default {
   },
   GET_CUSTOMIZATION(state) {
     return state.customization;
+  },
+  GET_PRICE(state) {
+    return state.price;
+  },
+  GET_PREP(state) {
+    return state.prep;
   }
 };

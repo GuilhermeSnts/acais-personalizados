@@ -7,5 +7,11 @@ export default {
   },
   SET_CUSTOMIZATION(state, payload) {
     state.customization = payload;
+  },
+  SET_PRICE(state, payload) {
+    state.price = payload;
+  },
+  SET_PREP(state, payload) {
+    state.prep = payload;
   }
 };
