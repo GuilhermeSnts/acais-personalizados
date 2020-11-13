@@ -13,16 +13,29 @@
     <BaseButton label="Finalizar" @click="finish">
       <ArrowRightIcon />
     </BaseButton>
+
+    <BaseDialog :value="isBeingPrepared" title="Preparando o Pedido">
+      <p>O pedido ficará pronto em: {{ prep_countdown }} minutos</p>
+      <BaseButton label="Recebido" @click="finished">
+        <ArrowRightIcon />
+      </BaseButton>
+    </BaseDialog>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import BaseButton from "../components/BaseButton";
+import BaseDialog from "../components/BaseDialog";
 import ArrowRightIcon from "../components/icons/ArrowRightIcon";
 
 export default {
   name: "Checkout",
+
+  data: () => ({
+    prep_countdown: 0,
+    isBeingPrepared: false
+  }),
 
   computed: {
     ...mapGetters("checkout", {
@@ -35,13 +48,21 @@ export default {
   },
 
   methods: {
+    ...mapActions("checkout", ["DO_CLEAN"]),
+
     finish() {
-      //
+      this.isBeingPrepared = true;
+      this.prep_countdown = this.prep;
+    },
+    finished() {
+      this.DO_CLEAN();
+      this.$router.push("/");
     }
   },
 
   components: {
     BaseButton,
+    BaseDialog,
     ArrowRightIcon
   }
 };

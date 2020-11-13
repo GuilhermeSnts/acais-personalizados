@@ -78,36 +78,4 @@ export default {
         transform: translateY(-7px)
         .icon
           fill: white !important
-
-    &.standard
-      color: #333333
-      background-color: #fff
-      border-radius: 25px
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
-      transition: all 0.3s ease 0s
-      .icon
-        fill: #333333
-      &:hover
-        background-color: #900020
-        box-shadow: 0px 15px 20px rgba(144, 0, 32, 0.4)
-        background-image: none
-        color: #fff
-        transform: translateY(-7px)
-        .icon
-          fill: white !important
-
-    &.button--outline
-      color: #333333
-      background-color: #fff
-      border-radius: 25px
-      border: 1px solid #333333
-      transition: all 0.3s ease 0s
-      .icon
-        fill: #333333
-      &:hover
-        border: 1px solid #900020
-        background-image: none
-        color: #900020
-        .icon
-          fill: #900020 !important
 </style>
