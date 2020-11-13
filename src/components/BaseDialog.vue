@@ -34,6 +34,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
+  backdrop-filter: blur(5px)
   .dialog-card
     box-sizing: border-box
     display: flex
