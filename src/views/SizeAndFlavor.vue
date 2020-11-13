@@ -1,7 +1,7 @@
 <template>
   <div class="size-and-flavor--page">
     <h1>Escolher Açaí</h1>
-    <p>tamanho</p>
+    <p>Tamanho</p>
     <BaseSelect
       v-model="size"
       :items="GET_SIZES"
@@ -17,10 +17,7 @@
       :error="flavorEmptyError"
       errorMessage="Escolha um sabor para continuar."
     />
-    <br />
-    <br />
-    <br />
-    <br />
+
     <BaseButton label="Continuar" @click="checkOptionsAndProceed">
       <ArrowRightIcon />
     </BaseButton>

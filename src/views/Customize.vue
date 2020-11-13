@@ -1,16 +1,12 @@
 <template>
   <div class="customize--page">
     <h1>Personalizar</h1>
-    <p>tamanho</p>
+    <p>Complemento</p>
     <BaseSelect
       v-model="customization"
       :items="GET_CUSTOMIZATIONS"
       placeholder="Escolha uma opção"
     />
-    <br />
-    <br />
-    <br />
-    <br />
     <BaseButton label="Continuar" @click="proceed">
       <ArrowRightIcon />
     </BaseButton>

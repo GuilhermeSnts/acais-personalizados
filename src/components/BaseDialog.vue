@@ -47,4 +47,11 @@ export default {
     border-radius: 16px
     background: #fff
     padding: 10px
+    .dialog-card-content
+      width: 100%
+      height: 100%
+      display: flex
+      flex-flow: column
+      justify-content: space-around
+      align-items: center
 </style>
