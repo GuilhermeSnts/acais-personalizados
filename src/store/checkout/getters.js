@@ -29,5 +29,10 @@ export default {
       customizationTotalValue =
         customizationPreps.reduce((acc, i) => acc + i) || 0;
     return sizePrep + flavorPrep + customizationTotalValue;
+  },
+  IS_CHECKOUT_VALID(state) {
+    let isSizeValid = Object.values(state.size).length;
+    let isFlavorValid = Object.values(state.flavor).length;
+    return isSizeValid && isFlavorValid;
   }
 };
